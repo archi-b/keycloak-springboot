@@ -21,8 +21,7 @@ The project uses docker compose to start both services. Use the following comman
 docker-compose up -d
 ```
 
-If you want to start keycloak from scratch you may follow the 
-instructions [here](https://github.com/keycloak/keycloak-quickstarts).
+If you want to start keycloak from scratch with a language different than java you may check out the following [link](https://github.com/keycloak/keycloak-quickstarts).
 
 ### External links
 
