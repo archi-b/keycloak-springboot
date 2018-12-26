@@ -26,7 +26,7 @@ If you want to start keycloak from scratch with a language different than java y
 ### External links
 
 Bellow there are all the links containing the information that lead to the creation of this boilerplate project:
-
+- [rest-api@Keycloak](https://www.keycloak.org/docs/1.9/server_development_guide/topics/admin-rest-api.html)
 - [integrating-keycloak-4-with-spring-boot-2@jinnerbichler](https://medium.com/@jinnerbichler/integrating-keycloak-4-with-spring-boot-2-microservices-6a6579f1d121)
 - [keycloak-quickstarts@keycloak](https://github.com/keycloak/keycloak-quickstarts)
 - [spring-boot-keycloak-tutorial@sebastienblanc](https://github.com/sebastienblanc/spring-boot-keycloak-tutorial/)
