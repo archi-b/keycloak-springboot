@@ -23,6 +23,26 @@ docker-compose up -d
 
 If you want to start keycloak from scratch with a language different than java you may check out the following [link](https://github.com/keycloak/keycloak-quickstarts).
 
+### TO TEST
+
+1. Acess "http://localhost:8081/auth/admin/master/console" (user = admin, password = password)
+2. Create realm in 'Add realm' with name "archib" and import "/docker/config/archib-realm.json" file. 
+3. Import file "/docker/config/archib-users-0.json" in menu "Manage/Import";
+4. Now test in the terminal the commands below:
+
+```
+    > export TOKEN_BEARER=$(curl -X POST -d client_id=archib-cli -d username=archib -d password=password -d grant_type=password http://192.168.99.101:8081/auth/realms/archib/protocol/openid-connect/token  | sed 's/.*access_token":"//g' | sed 's/".*//g')
+    > curl -H "Authorization: Bearer $TOKEN_BEARER" -H "realm: archib" http://localhost:8181/test
+```
+
+and test access with another realm:
+```
+    > export TOKEN_BEARER=$(curl -X POST -d client_id=admin-cli -d username=admin -d password=password -d grant_type=password http://192.168.99.101:8081/auth/realms/master/protocol/openid-connect/token  | sed 's/.*access_token":"//g' | sed 's/".*//g')
+    > curl -H "Authorization: Bearer $TOKEN_BEARER" -H "realm: master" http://localhost:8181/test
+```
+
+5. This is possible because files "archib-keycloak.json" and "master-keycloak.json" in resources folder was added.
+
 ### External links
 
 Bellow there are all the links containing the information that lead to the creation of this boilerplate project:
@@ -34,3 +54,5 @@ Bellow there are all the links containing the information that lead to the creat
 - [securing-apps-and-services-with-keycloak@redhat](https://developers.redhat.com/blog/2018/08/28/securing-apps-and-services-with-keycloak/)
 - [create-a-custom-theme-for-keycloak@auscunningham](https://medium.com/@auscunningham/create-a-custom-theme-for-keycloak-8781207be604)
 - [jboss/keycloak@dockerhub](https://hub.docker.com/r/jboss/keycloak/)
+- [Multi Tenancy]([https://www.keycloak.org/docs/2.5/securing_apps/topics/oidc/java/multi-tenancy.html])
+- [movie-app@vimalKeshu](https://github.com/vimalKeshu/movie-app)
