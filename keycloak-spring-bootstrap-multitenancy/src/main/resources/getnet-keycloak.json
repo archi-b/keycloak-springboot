@@ -1,0 +1,8 @@
+{
+  "realm": "getnet",
+  "auth-server-url": "http://192.168.99.101:8081/auth",
+  "ssl-required": "external",
+  "resource": "getnet-cli",
+  "public-client": true,
+  "confidential-port": 0
+}
