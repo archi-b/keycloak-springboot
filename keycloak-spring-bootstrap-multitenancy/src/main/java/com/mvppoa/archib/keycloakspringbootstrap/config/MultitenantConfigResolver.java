@@ -33,8 +33,4 @@ public class MultitenantConfigResolver implements KeycloakConfigResolver {
 		return deployment;
 	}
 
-	public static void setAdapterConfig(AdapterConfig adapterConfig) {
-		MultitenantConfigResolver.adapterConfig = adapterConfig;
-	}
-
 }
