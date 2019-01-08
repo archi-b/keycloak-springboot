@@ -21,7 +21,7 @@ services:
     - DB_VENDOR=postgres
     - DB_USER=admin
     - DB_PASSWORD=password
-    - DB_ADDR=192.168.1.203
+    - DB_ADDR=192.168.99.101
     - DB_PORT=5431
     - DB_DATABASE=keycloakdb
     ports:
@@ -39,7 +39,7 @@ services:
     ports:
       - 5431:5432
     volumes:
-    - pgdata:/var/lib/postgresql/data
+    - postgress-data:/var/lib/postgresql/data
 
 volumes:
-  pgdata:
+  postgress-data:
